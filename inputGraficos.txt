@@ -1,0 +1,56 @@
+Algorithm: mergesort | Dataset: ordered | Size: 100 | Time: 11.491800 microsegundos | 0.000011 segundos
+Algorithm: mergesort | Dataset: ordered | Size: 1000 | Time: 97.405200 microsegundos | 0.000097 segundos
+Algorithm: mergesort | Dataset: ordered | Size: 10000 | Time: 598.245800 microsegundos | 0.000598 segundos
+Algorithm: mergesort | Dataset: ordered | Size: 100000 | Time: 6106.070000 microsegundos | 0.006106 segundos
+Algorithm: mergesort | Dataset: ordered | Size: 1000000 | Time: 64202.602600 microsegundos | 0.064203 segundos
+Algorithm: mergesort | Dataset: ordered | Size: 10000000 | Time: 756409.136400 microsegundos | 0.756409 segundos
+Algorithm: mergesort | Dataset: ordered | Size: 100000000 | Time: 8383582.713400 microsegundos | 8.383583 segundos
+Algorithm: mergesort | Dataset: reverse | Size: 100 | Time: 11.189800 microsegundos | 0.000011 segundos
+Algorithm: mergesort | Dataset: reverse | Size: 1000 | Time: 72.841400 microsegundos | 0.000073 segundos
+Algorithm: mergesort | Dataset: reverse | Size: 10000 | Time: 881.327200 microsegundos | 0.000881 segundos
+Algorithm: mergesort | Dataset: reverse | Size: 100000 | Time: 6498.232000 microsegundos | 0.006498 segundos
+Algorithm: mergesort | Dataset: reverse | Size: 1000000 | Time: 72230.334800 microsegundos | 0.072230 segundos
+Algorithm: mergesort | Dataset: reverse | Size: 10000000 | Time: 833808.332000 microsegundos | 0.833808 segundos
+Algorithm: mergesort | Dataset: reverse | Size: 100000000 | Time: 8270245.139000 microsegundos | 8.270245 segundos
+Algorithm: mergesort | Dataset: semi_ordered | Size: 100 | Time: 12.581800 microsegundos | 0.000013 segundos
+Algorithm: mergesort | Dataset: semi_ordered | Size: 1000 | Time: 125.567000 microsegundos | 0.000126 segundos
+Algorithm: mergesort | Dataset: semi_ordered | Size: 10000 | Time: 1059.220600 microsegundos | 0.001059 segundos
+Algorithm: mergesort | Dataset: semi_ordered | Size: 100000 | Time: 9662.840600 microsegundos | 0.009663 segundos
+Algorithm: mergesort | Dataset: semi_ordered | Size: 1000000 | Time: 105865.291200 microsegundos | 0.105865 segundos
+Algorithm: mergesort | Dataset: semi_ordered | Size: 10000000 | Time: 1121891.057000 microsegundos | 1.121891 segundos
+Algorithm: mergesort | Dataset: semi_ordered | Size: 100000000 | Time: 14784605.903000 microsegundos | 14.784606 segundos
+Algorithm: mergesort | Dataset: random | Size: 100 | Time: 11.083800 microsegundos | 0.000011 segundos
+Algorithm: mergesort | Dataset: random | Size: 1000 | Time: 102.059000 microsegundos | 0.000102 segundos
+Algorithm: mergesort | Dataset: random | Size: 10000 | Time: 1149.836200 microsegundos | 0.001150 segundos
+Algorithm: mergesort | Dataset: random | Size: 100000 | Time: 13142.190800 microsegundos | 0.013142 segundos
+Algorithm: mergesort | Dataset: random | Size: 1000000 | Time: 154708.767800 microsegundos | 0.154709 segundos
+Algorithm: mergesort | Dataset: random | Size: 10000000 | Time: 1711685.801800 microsegundos | 1.711686 segundos
+Algorithm: mergesort | Dataset: random | Size: 100000000 | Time: 19517156.502600 microsegundos | 19.517157 segundos
+Algorithm: c++ std::sort | Dataset: ordered | Size: 100 | Time: 1.492000 microsegundos | 0.000001 segundos
+Algorithm: c++ std::sort | Dataset: ordered | Size: 1000 | Time: 10.315800 microsegundos | 0.000010 segundos
+Algorithm: c++ std::sort | Dataset: ordered | Size: 10000 | Time: 112.122800 microsegundos | 0.000112 segundos
+Algorithm: c++ std::sort | Dataset: ordered | Size: 100000 | Time: 1272.973200 microsegundos | 0.001273 segundos
+Algorithm: c++ std::sort | Dataset: ordered | Size: 1000000 | Time: 13909.991800 microsegundos | 0.013910 segundos
+Algorithm: c++ std::sort | Dataset: ordered | Size: 10000000 | Time: 182976.545000 microsegundos | 0.182977 segundos
+Algorithm: c++ std::sort | Dataset: ordered | Size: 100000000 | Time: 1984119.129400 microsegundos | 1.984119 segundos
+Algorithm: c++ std::sort | Dataset: reverse | Size: 100 | Time: 1.240000 microsegundos | 0.000001 segundos
+Algorithm: c++ std::sort | Dataset: reverse | Size: 1000 | Time: 7.534000 microsegundos | 0.000008 segundos
+Algorithm: c++ std::sort | Dataset: reverse | Size: 10000 | Time: 82.467000 microsegundos | 0.000082 segundos
+Algorithm: c++ std::sort | Dataset: reverse | Size: 100000 | Time: 942.076400 microsegundos | 0.000942 segundos
+Algorithm: c++ std::sort | Dataset: reverse | Size: 1000000 | Time: 10642.361800 microsegundos | 0.010642 segundos
+Algorithm: c++ std::sort | Dataset: reverse | Size: 10000000 | Time: 131927.375600 microsegundos | 0.131927 segundos
+Algorithm: c++ std::sort | Dataset: reverse | Size: 100000000 | Time: 1618654.730000 microsegundos | 1.618655 segundos
+Algorithm: c++ std::sort | Dataset: semi_ordered | Size: 100 | Time: 2.438000 microsegundos | 0.000002 segundos
+Algorithm: c++ std::sort | Dataset: semi_ordered | Size: 1000 | Time: 27.657800 microsegundos | 0.000028 segundos
+Algorithm: c++ std::sort | Dataset: semi_ordered | Size: 10000 | Time: 433.695800 microsegundos | 0.000434 segundos
+Algorithm: c++ std::sort | Dataset: semi_ordered | Size: 100000 | Time: 4970.147400 microsegundos | 0.004970 segundos
+Algorithm: c++ std::sort | Dataset: semi_ordered | Size: 1000000 | Time: 66627.553800 microsegundos | 0.066628 segundos
+Algorithm: c++ std::sort | Dataset: semi_ordered | Size: 10000000 | Time: 755507.568400 microsegundos | 0.755508 segundos
+Algorithm: c++ std::sort | Dataset: semi_ordered | Size: 100000000 | Time: 6111023.339400 microsegundos | 6.111023 segundos
+Algorithm: c++ std::sort | Dataset: random | Size: 100 | Time: 3.412000 microsegundos | 0.000003 segundos
+Algorithm: c++ std::sort | Dataset: random | Size: 1000 | Time: 44.097600 microsegundos | 0.000044 segundos
+Algorithm: c++ std::sort | Dataset: random | Size: 10000 | Time: 523.014600 microsegundos | 0.000523 segundos
+Algorithm: c++ std::sort | Dataset: random | Size: 100000 | Time: 6228.606400 microsegundos | 0.006229 segundos
+Algorithm: c++ std::sort | Dataset: random | Size: 1000000 | Time: 74082.560600 microsegundos | 0.074083 segundos
+Algorithm: c++ std::sort | Dataset: random | Size: 10000000 | Time: 864908.949200 microsegundos | 0.864909 segundos
+Algorithm: c++ std::sort | Dataset: random | Size: 100000000 | Time: 9692652.457000 microsegundos | 9.692652 segundos

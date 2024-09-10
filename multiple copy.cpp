@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <stdio.h>
 
-#include "barra.hpp"
+
 using namespace std;
 chrono::time_point<chrono::high_resolution_clock> start;
 

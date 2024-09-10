@@ -24,7 +24,6 @@ void progressBar(int max, int progress, int barWidth = 70) {
 }
 
 
-
 void timeFormat(int seg){
     // Calcular las horas, minutos y segundos
     int horas = seg / 3600;
@@ -78,23 +77,34 @@ vector<int> filetovector(ifstream& file){
 }
 
 
-void pidieronOutput(ofstream& file, vector<int> arr){
-    int num, i = 0;
-    for(const auto& num : arr){
-        file << num << endl;
-        progressBar(arr.size(), ++i);
+
+// Function to write the matrix to a text file
+void writeMatrixToFile(const std::vector<std::vector<int>>& matrix, const std::string& filename) {
+    std::ofstream file(filename);
+
+    if (file.is_open()) {
+        cout << "Writing...\n";
+        for (const auto& row : matrix) {
+            for (const auto& element : row) {
+                file << std::setw(8) << element;  // Set width for alignment
+            }
+            file << std::endl;
+        }
+        file.close();
+    } else {
+        std::cerr << "Error opening file!" << std::endl;
     }
-    file << endl;
 }
 
 
-void writeTimeStats(string path, long double time, string algorithm, string datatype, string numCases){
+
+void writeTimeStats(string path, long double time, string algorithm, int dimA, int dimB, string numCases){
     ofstream file(path, ios::app);
     if (!file.is_open()){
         cerr << "No se pudo abrir el archivo: " << path << endl;
         return;
     }
-    string line = "Algorithm: " + algorithm + " | Dataset: " + datatype + " | Size: " + numCases + " | Time: " + to_string(time) + " microsegundos | " + to_string(time/1000000) + " segundos";
+    string line = "Algoritmo: " + algorithm + " | Dimension: " + to_string(dimA) + "x" + to_string(dimA) + " | Time: " + to_string(time) + " microsegundos | " + to_string(time/1000000) + " segundos";
     file << line << endl;
     file.close();
 }

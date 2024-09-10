@@ -4,7 +4,6 @@
 using namespace std;
 
 
-
 void merge(vector<int>& arr, int left, int mid, int right)
 {
     int sizeLeft = mid - left + 1;

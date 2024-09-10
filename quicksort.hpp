@@ -3,77 +3,37 @@
 #include <stdio.h>
 using namespace std;
 
-/*
-// Función para realizar la partición en QuickSort
-int partition(vector<int>& vec, int low, int high) {
-    int mid = low + (high - low) / 2;
-    int pivot = vec[mid];
-    swap(vec[mid], vec[high]);
-    int i = low - 1;
-    for (int j = low; j <= high - 1; j++) {
-        if (vec[j] <= pivot) {
-            i++;
-            swap(vec[i], vec[j]);
-        }
-    }
-    swap(vec[i + 1], vec[high]);
-    return i + 1;
-}
-
-// Función para QuickSort
-void quickSort(vector<int>& vec, int low, int high) {
-    if (low < high) {
-        int pi = partition(vec, low, high);
-        quickSort(vec, low, pi - 1);
-        quickSort(vec, pi + 1, high);
-    }
-}
-
-*/
-// FIXME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
 // Función de partición optimizada
 int partition(vector<int>& arr, int start, int end) {
-    
-    
-    // Mediana de tres como pivote
-    /* Dejado fuera porque no es la implementacion estandar, 
-       ademas dificulta probar el peor caso
-       
-    int mid = start + (end - start) / 2;
-    if (arr[mid] < arr[start])
-        swap(arr[mid], arr[start]);
-    if (arr[end] < arr[start])
-        swap(arr[end], arr[start]);
-    if (arr[mid] < arr[end])
-        swap(arr[mid], arr[end]);
-    */
-    
-    int pivot = arr[end]; // El último elemento es el pivote
-    int i = start - 1; // Índice para elementos más pequeños que el pivote
+    int pivot = arr[start];  // El primer elemento es el pivote
+    int i = start;           // Índice para los elementos menores que el pivote
 
-    for (int j = start; j <= end - 1; j++) {
+    for (int j = start + 1; j <= end; j++) {
         if (arr[j] < pivot) {
-            i++;
-            swap(arr[i], arr[j]);
+            i++;  // Incrementamos el índice para el próximo valor menor que el pivote
+            swap(arr[i], arr[j]);  // Intercambiamos el elemento menor con el valor en i
         }
     }
-    
-    // Colocar el pivote en su posición correcta
-    swap(arr[i + 1], arr[end]);
-    return i + 1;
+
+    // Colocamos el pivote en su posición correcta (entre los menores y mayores)
+    swap(arr[start], arr[i]);
+
+    return i;  // Retornamos la posición final del pivote
 }
 
-// Implementación de Quicksort optimizada
+// Implementación de Quicksort optimizada con recursión de cola
 void quickSort(vector<int>& arr, int start, int end) {
-    if (start < end) {
-        // Realizar la partición y obtener el índice del pivote
-        int pivotIndex = partition(arr, start, end);
+    while (start < end) {
+        int pivotIndex = partition(arr, start, end);  // Realizamos la partición y obtenemos la posición del pivote
 
-        // Llamadas recursivas en ambas particiones
-        quickSort(arr, start, pivotIndex - 1); // Lado izquierdo
-        quickSort(arr, pivotIndex + 1, end);   // Lado derecho
+        // Recursión en la partición más pequeña
+        if (pivotIndex - start < end - pivotIndex) {
+            quickSort(arr, start, pivotIndex - 1);  // Recursión en el lado izquierdo
+            start = pivotIndex + 1;                // Procesamos el lado derecho iterativamente
+        } else {
+            quickSort(arr, pivotIndex + 1, end);   // Recursión en el lado derecho
+            end = pivotIndex - 1;                  // Procesamos el lado izquierdo iterativamente
+        }
     }
 }
-
-

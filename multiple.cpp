@@ -10,8 +10,7 @@
 #include "mergesort.hpp"
 #include "quicksort.hpp"
 #include "utilities.hpp"
-#include "quickerSort.hpp"
-#include "americanfsort.hpp"
+
 
 using namespace std;
 
@@ -42,17 +41,17 @@ int main()
     string out_path = "outputDataset/out_dataset_";
     string time_path = "./timeStats.txt";
     vector<string> numCases = {"100", "1000", "10000", "100000", "1000000", "10000000", "100000000"};
-    vector<string> algorithms = {"bubblesort", "selectionsort", "mergesort", "quicksort", "c++ std::sort", "experimental 1", "experimental 2"};
-    vector<string> datatypes = {"ordered", "reverse", "partially_ordered", "semi_ordered" , "random"};
+    vector<string> algorithms = {"selectionsort", "mergesort", "quicksort", "c++ std::sort"};
+    vector<string> datatypes = {"ordered", "reverse", "semi_ordered" , "random"};
 
 
 
     int choice;
-    std::cout << ">>>> Seleccione un algoritmo:\n(0) bubblesort\n(1) selectionsort\n(2) mergesort\n(3) quicksort\n(4) c++ std::sort()\n> ";
+    std::cout << ">>>> Seleccione un algoritmo:\n(0) selectionsort\n(1) mergesort\n(2) quicksort\n(3) c++ std::sort()\n> ";
     cin >> choice;
 
     int datatype;
-    std::cout << ">>>> Seleccione tipo de dataset:\n(0) ordered\n(1) reverse\n(2) partially_ordered\n(3) semi_ordered\n(4) random\n> ";
+    std::cout << ">>>> Seleccione tipo de dataset:\n(0) ordered\n(1) reverse\n(2) semi_ordered\n(3) random\n> ";
     cin >> datatype;
 
     int topcap;
@@ -111,32 +110,23 @@ int main()
             std::thread hiloAlgoritmo([&ejecutando, &arr, N, choice, &duration, &time, &start]() {
                 start = chrono::high_resolution_clock::now();
                 switch (choice)
-                {
+                {               
                 case 0:
-                    bubbleSort(arr, N);
-                    break;
-                
-                case 1:
                     selectionSort(arr, N);
                     break;
                 
-                case 2:
+                case 1:
                     mergeSort(arr, 0, N);
                     break;
                 
-                case 3:
+                case 2:
                     quickSort(arr, 0, N);
                     break;
 
-                case 4:
+                case 3:
                     std::sort(arr.begin(), arr.end());
                     break;
                 
-                case 5:
-                    CountingSort::sort(arr);
-                
-                case 6:
-                    OptimizedQuickSort::threeWayQuickSort(arr);
                 default:
                     // FIXME poner bogo (utilities)
                     std::sort(arr.begin(), arr.end());
