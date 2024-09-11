@@ -1,3 +1,5 @@
+Nota: Los datos en bruto con el que se hicieron los gráficos de los algoritmos de ordenamiento están en inputGraficos.txt y para los algoritmos de matrices es matrixTimeStats.txt
+
 <!>  Todas las compilaciones son llevadas a cabo con g++ -O3 [input] -o [output]
 
 Para llevar a cabo las pruebas efectuadas en el informe se debe compilar el archivo "multiple.cpp" o "full.cpp" para hacer mediciones de los algoritmos de ordenamiento
