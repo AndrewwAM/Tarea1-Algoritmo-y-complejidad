@@ -8,7 +8,13 @@
 
 using namespace std;
 
-//writes a progress bar to the console
+/**
+ * @brief Escribe una barra de progreso en la consola.
+ * 
+ * @param max El valor máximo de progreso.
+ * @param progress El progreso actual.
+ * @param barWidth El ancho de la barra de progreso (por defecto es 70).
+ */
 void progressBar(int max, int progress, int barWidth = 70) {
     float percentage = (float)progress / max;
     int pos = barWidth * percentage;
@@ -24,20 +30,23 @@ void progressBar(int max, int progress, int barWidth = 70) {
 }
 
 
-void timeFormat(int seg){
-    // Calcular las horas, minutos y segundos
-    int horas = seg / 3600;
-    int minutos = (seg % 3600) / 60;
-    int segundos_restantes = seg % 60;
-
-    // Mostrar el resultado en formato 00h:00m:00s
-    std::cout << "\rTiempo transcurrido: "
-              << std::setw(2) << std::setfill('0') << horas << "h:"
-              << std::setw(2) << std::setfill('0') << minutos << "m:"
+/**
+ * @brief Convierte segundos en un formato de tiempo legible.
+ * 
+ * @param segundos El tiempo en segundos.
+ */
+void timeFormat(int segundos) {
+    int minutos = segundos / 60;
+    int segundos_restantes = segundos % 60;
+    std::cout << std::setw(2) << std::setfill('0') << minutos << "m:"
               << std::setw(2) << std::setfill('0') << segundos_restantes << "s";
 }
 
-// Función para mostrar un temporizador en la consola
+/**
+ * @brief Función para mostrar un temporizador en la consola.
+ * 
+ * @param ejecutando Variable atómica que controla la ejecución del temporizador.
+ */
 void mostrarTemporizador(std::atomic<bool>& ejecutando) {
     float delay = 1;
     auto tiempo_inicio = chrono::high_resolution_clock::now();
@@ -65,7 +74,12 @@ void mostrarTemporizador(std::atomic<bool>& ejecutando) {
 
 
 
-// Funciones auxiliares para la lectura y escritura de archivo
+/**
+ * @brief Convierte el contenido de un archivo en un vector de enteros.
+ * 
+ * @param file El archivo de entrada.
+ * @return vector<int> El vector de enteros resultante.
+ */
 vector<int> filetovector(ifstream& file){
     int line;
     vector<int> output;
@@ -78,7 +92,12 @@ vector<int> filetovector(ifstream& file){
 
 
 
-// Function to write the matrix to a text file
+/**
+ * @brief Escribe una matriz en un archivo de texto.
+ * 
+ * @param matrix La matriz a escribir.
+ * @param filename El nombre del archivo de salida.
+ */
 void writeMatrixToFile(const std::vector<std::vector<int>>& matrix, const std::string& filename) {
     std::ofstream file(filename);
 
@@ -98,6 +117,16 @@ void writeMatrixToFile(const std::vector<std::vector<int>>& matrix, const std::s
 
 
 
+/**
+ * @brief Escribe estadísticas de tiempo en un archivo.
+ * 
+ * @param path La ruta del archivo de salida.
+ * @param time El tiempo de ejecución.
+ * @param algorithm El nombre del algoritmo.
+ * @param dimA La dimensión de la matriz A.
+ * @param dimB La dimensión de la matriz B.
+ * @param numCases El número de casos.
+ */
 void writeTimeStats(string path, long double time, string algorithm, int dimA, int dimB, string numCases){
     ofstream file(path, ios::app);
     if (!file.is_open()){

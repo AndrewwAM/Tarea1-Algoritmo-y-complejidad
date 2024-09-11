@@ -8,7 +8,13 @@
 
 using namespace std;
 
-//writes a progress bar to the console
+/**
+ * @brief Escribe una barra de progreso en la consola.
+ * 
+ * @param max El valor máximo de progreso.
+ * @param progress El progreso actual.
+ * @param barWidth El ancho de la barra de progreso (por defecto es 70).
+ */
 void progressBar(int max, int progress, int barWidth = 70) {
     float percentage = (float)progress / max;
     int pos = barWidth * percentage;
@@ -23,8 +29,11 @@ void progressBar(int max, int progress, int barWidth = 70) {
     std::cout.flush();
 }
 
-
-
+/**
+ * @brief Convierte segundos en un formato de tiempo legible.
+ * 
+ * @param seg El tiempo en segundos.
+ */
 void timeFormat(int seg){
     // Calcular las horas, minutos y segundos
     int horas = seg / 3600;
@@ -38,7 +47,11 @@ void timeFormat(int seg){
               << std::setw(2) << std::setfill('0') << segundos_restantes << "s";
 }
 
-// Función para mostrar un temporizador en la consola
+/**
+ * @brief Función para mostrar un temporizador en la consola.
+ * 
+ * @param ejecutando Variable atómica que controla la ejecución del temporizador.
+ */
 void mostrarTemporizador(std::atomic<bool>& ejecutando) {
     float delay = 1;
     auto tiempo_inicio = chrono::high_resolution_clock::now();
@@ -61,12 +74,14 @@ void mostrarTemporizador(std::atomic<bool>& ejecutando) {
         timeFormat(++segundos);
         std::cout.flush();
     }
-
 }
 
-
-
-// Funciones auxiliares para la lectura y escritura de archivo
+/**
+ * @brief Convierte el contenido de un archivo en un vector de enteros.
+ * 
+ * @param file El archivo de entrada.
+ * @return vector<int> El vector de enteros resultante.
+ */
 vector<int> filetovector(ifstream& file){
     int line;
     vector<int> output;
@@ -77,7 +92,12 @@ vector<int> filetovector(ifstream& file){
     return output;
 }
 
-
+/**
+ * @brief Escribe un vector de enteros en un archivo y muestra una barra de progreso.
+ * 
+ * @param file El archivo de salida.
+ * @param arr El vector de enteros a escribir.
+ */
 void pidieronOutput(ofstream& file, vector<int> arr){
     int num, i = 0;
     for(const auto& num : arr){
@@ -87,7 +107,15 @@ void pidieronOutput(ofstream& file, vector<int> arr){
     file << endl;
 }
 
-
+/**
+ * @brief Escribe estadísticas de tiempo en un archivo.
+ * 
+ * @param path La ruta del archivo de salida.
+ * @param time El tiempo de ejecución.
+ * @param algorithm El nombre del algoritmo.
+ * @param datatype El tipo de datos.
+ * @param numCases El número de casos.
+ */
 void writeTimeStats(string path, long double time, string algorithm, string datatype, string numCases){
     ofstream file(path, ios::app);
     if (!file.is_open()){

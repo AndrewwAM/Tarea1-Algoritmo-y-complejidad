@@ -6,6 +6,14 @@
 #include <string>
 #include <numeric> // Para std::iota
 
+/**
+ * @brief Genera un dataset de enteros basado en el tipo de orden especificado.
+ * 
+ * @param size El tamaño del dataset.
+ * @param order_type El tipo de orden del dataset (ordered, reverse, semi_ordered, partially_ordered, random).
+ * @param ordered_percentage El porcentaje de elementos ordenados si se elige parcialmente/semi ordenado.
+ * @return std::vector<int> El dataset generado.
+ */
 std::vector<int> generate_dataset(int size, const std::string& order_type, int ordered_percentage = 50) {
     std::vector<int> dataset;
     std::random_device rd;
@@ -59,6 +67,12 @@ std::vector<int> generate_dataset(int size, const std::string& order_type, int o
     return dataset;
 }
 
+/**
+ * @brief Guarda un dataset en un archivo.
+ * 
+ * @param dataset El dataset a guardar.
+ * @param filename El nombre del archivo de salida.
+ */
 void save_dataset(const std::vector<int>& dataset, const std::string& filename) {
     std::ofstream file(filename);
     if (file.is_open()) {

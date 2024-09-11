@@ -8,10 +8,18 @@
 #include "strassen.hpp"
 #include "utilities.hpp"
 #include "basiccubic.hpp"
+#include "transposedbasiccubic.hpp"
 
 using Matrix = std::vector<std::vector<int>>;
 
-// Function to generate a random matrix
+
+/**
+ * @brief Genera una matriz aleatoria.
+ * 
+ * @param rows Número de filas de la matriz.
+ * @param cols Número de columnas de la matriz.
+ * @return Matrix La matriz generada aleatoriamente.
+ */
 Matrix generateMatrix(int rows, int cols) {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -26,7 +34,11 @@ Matrix generateMatrix(int rows, int cols) {
     return matrix;
 }
 
-// Función para imprimir una matriz
+/**
+ * @brief Imprime una matriz en la consola.
+ * 
+ * @param mat La matriz a imprimir.
+ */
 void printMatrix(const Matrix& mat) {
     for (const auto& row : mat) {
         for (int elem : row) {
@@ -36,7 +48,14 @@ void printMatrix(const Matrix& mat) {
     }
 }
 
-// Function to measure execution time
+/**
+ * @brief Mide el tiempo de ejecución de una función que devuelve una matriz.
+ * 
+ * @tparam Func El tipo de la función a medir.
+ * @param func La función cuya ejecución se va a medir.
+ * @param c La matriz resultante de la ejecución de la función.
+ * @return long long El tiempo de ejecución en microsegundos.
+ */
 template<typename Func>
 long long measureTime(Func func, Matrix& c) {
     auto start = std::chrono::high_resolution_clock::now();
@@ -52,7 +71,7 @@ int main()
     std::atomic<bool> ejecutando(true);
     bool w_output = true; // Si escribe el arreglo ordenado en archivos de salida [default = true]
     bool w_excec_time = true; // Si escribe los tiempos promedio de la ejecucion en un archivo log [default = true] 
-    int tests = 3; // Cantidad de casos de prueba ademas del caso 0
+    int tests = 2; // Cantidad de casos de prueba ademas del caso 0
     long double totalTime = 0;
     string linea;
     /* 
@@ -69,7 +88,7 @@ int main()
 
 
     int choice;
-    std::cout << "Seleccione el algoritmo:\n(0) multiplicacion basica | (1) basica optimizada (2) para Strassen\n>";
+    std::cout << "Seleccione el algoritmo:\n(0) multiplicacion basica | (1) basica optimizada | (2) para Strassen\n>";
     cin >> choice;
 
     int n;
@@ -118,17 +137,21 @@ int main()
 
         long double duration;
 
+        std::cout << ">>>> Input: " << dimA << "x" << dimB << endl;
         while(j <= tests){
             ejecutando = true;
             
             std::thread hiloTemporizador(mostrarTemporizador, std::ref(ejecutando));
 
-            std::thread hiloAlgoritmo([&ejecutando, &A, &B, choice, &duration, &C]() {
+            std::thread hiloAlgoritmo([&ejecutando, &A, &B, choice, &duration, &C, &dimA]() {
                 
                 switch (choice)
                 {
                 case 1:
-                    duration = measureTime([&]() { return strassenMultiply(A, B); }, C);
+                    duration = measureTime([&A, &B, &C]() {return multiplyMatricesWithTranspose(A, B);}, C);
+                    break;
+                case 2:
+                    duration = measureTime([&A, &B, &C, &dimA]() { return strassenMultiplicar(A, B); }, C);
                     break;
                 default:
                     duration = measureTime([&A, &B, &C]() {return multiplyMatricesBasic(A, B);}, C);
@@ -139,7 +162,6 @@ int main()
 
             hiloAlgoritmo.join();
             hiloTemporizador.join();
-            printMatrix(C);
             cout << "\r";
             
             if (j != 0) totalTime += duration;

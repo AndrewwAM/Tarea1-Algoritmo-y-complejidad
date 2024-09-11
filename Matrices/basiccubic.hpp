@@ -1,6 +1,15 @@
 #include <vector>
+
+// Definimos un alias para una matriz de enteros
 using Matrix = std::vector<std::vector<int>>;
 
+/**
+ * @brief Multiplica dos matrices cuadradas de enteros.
+ * 
+ * @param A La primera matriz de entrada.
+ * @param B La segunda matriz de entrada.
+ * @return Matrix La matriz resultante de la multiplicación de A y B.
+ */
 Matrix multiplyMatricesBasic(const Matrix& A, const Matrix& B) {
     // Calculamos la dimensión de las matrices (n x n)
     int n = A.size();

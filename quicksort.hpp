@@ -4,7 +4,14 @@
 using namespace std;
 
 
-// Función de partición optimizada
+/**
+ * @brief Función de partición optimizada para Quicksort.
+ * 
+ * @param arr El vector de enteros a ordenar.
+ * @param start El índice inicial del subvector a particionar.
+ * @param end El índice final del subvector a particionar.
+ * @return int La posición final del pivote.
+ */
 int partition(vector<int>& arr, int start, int end) {
     int pivot = arr[start];  // El primer elemento es el pivote
     int i = start;           // Índice para los elementos menores que el pivote
@@ -22,7 +29,13 @@ int partition(vector<int>& arr, int start, int end) {
     return i;  // Retornamos la posición final del pivote
 }
 
-// Implementación de Quicksort optimizada con recursión de cola
+/**
+ * @brief Implementación de Quicksort optimizada con recursión de cola.
+ * 
+ * @param arr El vector de enteros a ordenar.
+ * @param start El índice inicial del subvector a ordenar.
+ * @param end El índice final del subvector a ordenar.
+ */
 void quickSort(vector<int>& arr, int start, int end) {
     while (start < end) {
         int pivotIndex = partition(arr, start, end);  // Realizamos la partición y obtenemos la posición del pivote

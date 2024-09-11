@@ -11,25 +11,16 @@
 #include "quicksort.hpp"
 #include "utilities.hpp"
 
-
 using namespace std;
 
-bool isSorted(const vector<int>& arr) {
-    for (size_t i = 1; i < arr.size(); ++i) {
-        if (arr[i - 1] > arr[i]) {
-            return false; // El arreglo no está ordenado
-        }
-    }
-    return true; // El arreglo está ordenado
-}
 
 int main()
 {
     chrono::time_point<chrono::high_resolution_clock> start;
     std::atomic<bool> ejecutando(true);
-    bool w_output = false; // Si escribe el arreglo ordenado en archivos de salida [default = true]
+    bool w_output = true; // Si escribe el arreglo ordenado en archivos de salida [default = true]
     bool w_excec_time = true; // Si escribe los tiempos promedio de la ejecucion en un archivo log [default = true] 
-    int tests = 2; // Cantidad de casos de prueba ademas del caso 0
+    int tests = 5; // Cantidad de casos de prueba ademas del caso 0
     long double time;
     string linea;
     /* 
@@ -39,10 +30,10 @@ int main()
     */
     string in_path = "datasets/dataset_";
     string out_path = "outputDataset/out_dataset_";
-    string time_path = "./fullTimeStats2.txt";
+    string time_path = "./fullTimeStats.txt";
     vector<string> numCases = {"100", "1000", "10000", "100000", "1000000", "10000000", "100000000"};
     vector<string> algorithms = {"selectionsort", "mergesort", "quicksort", "c++ std::sort"};
-    vector<string> datatypes = {"ordered", "semi_ordered", "random", "reverse"};
+    vector<string> datatypes = {"semi_ordered", "ordered", "random", "reverse"};
 
 
 

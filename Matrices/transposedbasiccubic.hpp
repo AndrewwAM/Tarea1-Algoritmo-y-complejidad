@@ -3,7 +3,12 @@
 
 using Matrix = std::vector<std::vector<int>>;
 
-// Función para transponer una matriz
+/**
+ * @brief Transpone una matriz cuadrada de enteros.
+ * 
+ * @param mat La matriz de entrada.
+ * @return Matrix La matriz transpuesta.
+ */
 Matrix transpose(const Matrix& mat) {
     int n = mat.size();
     Matrix transposed(n, std::vector<int>(n, 0));
@@ -15,7 +20,13 @@ Matrix transpose(const Matrix& mat) {
     return transposed;
 }
 
-// Función para multiplicar matrices con la segunda matriz transpuesta
+/**
+ * @brief Multiplica dos matrices cuadradas de enteros utilizando la transposición de la segunda matriz.
+ * 
+ * @param A La primera matriz de entrada.
+ * @param B La segunda matriz de entrada.
+ * @return Matrix La matriz resultante de la multiplicación de A y B.
+ */
 Matrix multiplyMatricesWithTranspose(const Matrix& A, const Matrix& B) {
     int n = A.size();
     Matrix B_transposed = transpose(B);

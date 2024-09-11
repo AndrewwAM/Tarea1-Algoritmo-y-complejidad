@@ -26,6 +26,7 @@ Algorithm: mergesort | Dataset: random | Size: 100000 | Time: 13142.190800 micro
 Algorithm: mergesort | Dataset: random | Size: 1000000 | Time: 154708.767800 microsegundos | 0.154709 segundos
 Algorithm: mergesort | Dataset: random | Size: 10000000 | Time: 1711685.801800 microsegundos | 1.711686 segundos
 Algorithm: mergesort | Dataset: random | Size: 100000000 | Time: 19517156.502600 microsegundos | 19.517157 segundos
+
 Algorithm: c++ std::sort | Dataset: ordered | Size: 100 | Time: 1.492000 microsegundos | 0.000001 segundos
 Algorithm: c++ std::sort | Dataset: ordered | Size: 1000 | Time: 10.315800 microsegundos | 0.000010 segundos
 Algorithm: c++ std::sort | Dataset: ordered | Size: 10000 | Time: 112.122800 microsegundos | 0.000112 segundos
@@ -54,3 +55,48 @@ Algorithm: c++ std::sort | Dataset: random | Size: 100000 | Time: 6228.606400 mi
 Algorithm: c++ std::sort | Dataset: random | Size: 1000000 | Time: 74082.560600 microsegundos | 0.074083 segundos
 Algorithm: c++ std::sort | Dataset: random | Size: 10000000 | Time: 864908.949200 microsegundos | 0.864909 segundos
 Algorithm: c++ std::sort | Dataset: random | Size: 100000000 | Time: 9692652.457000 microsegundos | 9.692652 segundos
+
+Algorithm: quicksort | Dataset: random | Size: 100 | Time: 4.090000 microsegundos | 0.000004 segundos
+Algorithm: quicksort | Dataset: random | Size: 1000 | Time: 55.849500 microsegundos | 0.000056 segundos
+Algorithm: quicksort | Dataset: random | Size: 10000 | Time: 502.500000 microsegundos | 0.000503 segundos
+Algorithm: quicksort | Dataset: random | Size: 100000 | Time: 7501.300000 microsegundos | 0.007501 segundos
+Algorithm: quicksort | Dataset: random | Size: 1000000 | Time: 91498.600000 microsegundos | 0.091499 segundos
+Algorithm: quicksort | Dataset: random | Size: 10000000 | Time: 1021848.200000 microsegundos | 1.021848 segundos
+Algorithm: quicksort | Dataset: random | Size: 100000000 | Time: 11401885.150000 microsegundos | 11.401885 segundos
+Algorithm: quicksort | Dataset: reverse | Size: 100 | Time: 7.654500 microsegundos | 0.000008 segundos
+Algorithm: quicksort | Dataset: reverse | Size: 1000 | Time: 574.289500 microsegundos | 0.000574 segundos
+Algorithm: quicksort | Dataset: reverse | Size: 10000 | Time: 42998.800000 microsegundos | 0.042999 segundos
+Algorithm: quicksort | Dataset: reverse | Size: 100000 | Time: 3890701.450000 microsegundos | 3.890701 segundos
+Algorithm: quicksort | Dataset: reverse | Size: 1000000 | Time: 425458926.550000 microsegundos | 425.458927 segundos
+Algorithm: quicksort | Dataset: semi_ordered | Size: 100 | Time: 7.465000 microsegundos | 0.000007 segundos
+Algorithm: quicksort | Dataset: semi_ordered | Size: 1000 | Time: 93.079000 microsegundos | 0.000093 segundos
+Algorithm: quicksort | Dataset: semi_ordered | Size: 10000 | Time: 997.550000 microsegundos | 0.000998 segundos
+Algorithm: quicksort | Dataset: semi_ordered | Size: 100000 | Time: 13852.500000 microsegundos | 0.013853 segundos
+Algorithm: quicksort | Dataset: semi_ordered | Size: 1000000 | Time: 15865688.000000 microsegundos | 15.865688 segundos
+Algorithm: quicksort | Dataset: semi_ordered | Size: 10000000 | Time: 455174686.400000 microsegundos | 455.174686 segundos
+Algorithm: quicksort | Dataset: ordered | Size: 100 | Time: 5.714500 microsegundos | 0.000006 segundos
+Algorithm: quicksort | Dataset: ordered | Size: 1000 | Time: 318.972000 microsegundos | 0.000319 segundos
+Algorithm: quicksort | Dataset: ordered | Size: 10000 | Time: 33998.700000 microsegundos | 0.033999 segundos
+Algorithm: quicksort | Dataset: ordered | Size: 100000 | Time: 3273489.550000 microsegundos | 3.273490 segundos
+Algorithm: quicksort | Dataset: ordered | Size: 1000000 | Time: 312992982.200000 microsegundos | 312.992982 segundos
+
+Algorithm: selectionsort | Dataset: random | Size: 100 | Time: 21.410000 microsegundos | 0.000021 segundos
+Algorithm: selectionsort | Dataset: random | Size: 1000 | Time: 541.484500 microsegundos | 0.000541 segundos
+Algorithm: selectionsort | Dataset: random | Size: 10000 | Time: 32387.072500 microsegundos | 0.032387 segundos
+Algorithm: selectionsort | Dataset: random | Size: 100000 | Time: 3274558.926000 microsegundos | 3.274559 segundos
+Algorithm: selectionsort | Dataset: random | Size: 1000000 | Time: 355293196.453500 microsegundos | 355.293196 segundos
+Algorithm: selectionsort | Dataset: reverse | Size: 100 | Time: 7.475000 microsegundos | 0.000007 segundos
+Algorithm: selectionsort | Dataset: reverse | Size: 1000 | Time: 538.904500 microsegundos | 0.000539 segundos
+Algorithm: selectionsort | Dataset: reverse | Size: 10000 | Time: 40403.589000 microsegundos | 0.040404 segundos
+Algorithm: selectionsort | Dataset: reverse | Size: 100000 | Time: 3489083.811000 microsegundos | 3.489084 segundos
+Algorithm: selectionsort | Dataset: reverse | Size: 1000000 | Time: 365741042.625500 microsegundos | 365.741043 segundos
+Algorithm: selectionsort | Dataset: semi_ordered | Size: 100 | Time: 6.905000 microsegundos | 0.000007 segundos
+Algorithm: selectionsort | Dataset: semi_ordered | Size: 1000 | Time: 377.311000 microsegundos | 0.000377 segundos
+Algorithm: selectionsort | Dataset: semi_ordered | Size: 10000 | Time: 33864.647500 microsegundos | 0.033865 segundos
+Algorithm: selectionsort | Dataset: semi_ordered | Size: 100000 | Time: 3342865.313000 microsegundos | 3.342865 segundos
+Algorithm: selectionsort | Dataset: semi_ordered | Size: 1000000 | Time: 336882330.957500 microsegundos | 336.882331 segundos
+Algorithm: selectionsort | Dataset: ordered | Size: 100 | Time: 6.295000 microsegundos | 0.000006 segundos
+Algorithm: selectionsort | Dataset: ordered | Size: 1000 | Time: 315.126500 microsegundos | 0.000315 segundos
+Algorithm: selectionsort | Dataset: ordered | Size: 10000 | Time: 33450.198500 microsegundos | 0.033450 segundos
+Algorithm: selectionsort | Dataset: ordered | Size: 100000 | Time: 3313003.461500 microsegundos | 3.313003 segundos
+Algorithm: selectionsort | Dataset: ordered | Size: 1000000 | Time: 331490697.820000 microsegundos | 331.490698 segundos

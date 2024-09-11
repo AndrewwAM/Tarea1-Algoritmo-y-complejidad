@@ -4,6 +4,14 @@
 using namespace std;
 
 
+/**
+ * @brief Fusiona dos vectores temporales de nuevo en el vector original.
+ * 
+ * @param arr El vector original.
+ * @param left El índice inicial del subvector.
+ * @param mid El índice medio del subvector.
+ * @param right El índice final del subvector.
+ */
 void merge(vector<int>& arr, int left, int mid, int right)
 {
     int sizeLeft = mid - left + 1;
@@ -48,7 +56,14 @@ void merge(vector<int>& arr, int left, int mid, int right)
     }
 }
 
-// Función principal de MergeSort
+
+/**
+ * @brief Función principal de MergeSort.
+ * 
+ * @param arr El vector de enteros a ordenar.
+ * @param left El índice inicial del subvector a ordenar.
+ * @param right El índice final del subvector a ordenar.
+ */
 void mergeSort(vector<int>& arr, int left, int right)
 {
     if (left < right){

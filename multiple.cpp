@@ -14,20 +14,12 @@
 
 using namespace std;
 
-bool isSorted(const vector<int>& arr) {
-    for (size_t i = 1; i < arr.size(); ++i) {
-        if (arr[i - 1] > arr[i]) {
-            return false; // El arreglo no está ordenado
-        }
-    }
-    return true; // El arreglo está ordenado
-}
 
 int main()
 {
     chrono::time_point<chrono::high_resolution_clock> start;
     std::atomic<bool> ejecutando(true);
-    bool w_output = false; // Si escribe el arreglo ordenado en archivos de salida [default = true]
+    bool w_output = true; // Si escribe el arreglo ordenado en archivos de salida [default = true]
     bool w_excec_time = true; // Si escribe los tiempos promedio de la ejecucion en un archivo log [default = true] 
     int tests = 5; // Cantidad de casos de prueba ademas del caso 0
     long double time;
