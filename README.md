@@ -1,21 +1,51 @@
-Nota: Los datos en bruto con el que se hicieron los gráficos de los algoritmos de ordenamiento están en inputGraficos.txt y para los algoritmos de matrices es matrixTimeStats.txt
+# Instrucciones para Pruebas de Algoritmos de Ordenamiento y Multiplicación de Matrices
 
-<!>  Todas las compilaciones son llevadas a cabo con g++ -O3 [input] -o [output]
+### Notas:
+- Los datos en bruto utilizados para generar los gráficos de los algoritmos de ordenamiento están en el archivo `inputGraficos.txt`.
+- Para los algoritmos de multiplicación de matrices, los datos están en `matrixTimeStats.txt`.
 
-Para llevar a cabo las pruebas efectuadas en el informe se debe compilar el archivo "multiple.cpp" o "full.cpp" para hacer mediciones de los algoritmos de ordenamiento
-    
-<!> IMPORTANTE <!>
-Crear las carpetas "datasets" y "outputDataset" en caso de que no existan previamente,
-compilar y utilizar "datagen.cpp" para generar los datasets en el formato que recibe este código 
+---
 
-"multiple.cpp" está pensado para hacer pruebas con un dataset a la vez.
-"full.cpp" realiza mediciones a través de cada uno de los datasets luego de seleccionar el algoritmo deseado.
+**Compilaciones:**  
+Todas las compilaciones deben realizarse con el siguiente comando:
 
-En el apartado de matrices se debe compilar "matrixtest.cpp".
+```bash
+g++ -O3 [input] -o [output]
+```
 
-Los resultados de rendimiento de cada prueba son guardados en archivos .txt
-full.cpp ----------> fullTimeStats.txt
-multiple.cpp ------> timeStats.txt
-matrixtest.cpp ----> matrixTimeStats.txt
+### Algoritmos de Ordenamiento
+Para llevar a cabo las pruebas descritas en el informe, se debe compilar el archivo `multiple.cpp` o `full.cpp` para medir el rendimiento de los algoritmos de ordenamiento.
 
-Se puede configurar cada script para activar la escritura en un archivo de salida de los arreglos o matrices calculadas.
+#### Requisitos previos:
+Es **importante** crear las carpetas `datasets` y `outputDataset` si no existen previamente. Luego, debes compilar y usar `datagen.cpp` para generar los datasets en el formato esperado por los algoritmos.
+
+```bash
+g++ -O3 datagen.cpp -o datagen
+./datagen
+```
+
+#### Uso de los archivos:
+- `multiple.cpp`: Está diseñado para ejecutar pruebas con un solo dataset a la vez.
+- `full.cpp`: Realiza pruebas automáticas recorriendo todos los datasets, luego de seleccionar el algoritmo de ordenamiento deseado.
+
+### Algoritmos de Multiplicación de Matrices
+Para las pruebas de multiplicación de matrices, se debe compilar y ejecutar `matrixtest.cpp`.
+
+```bash
+g++ -O3 matrixtest.cpp -o matrixtest
+./matrixtest
+```
+
+---
+
+### Resultados de las Pruebas
+Los resultados de rendimiento de cada prueba se almacenan en archivos `.txt`:
+
+- `full.cpp` guarda los tiempos en: `fullTimeStats.txt`.
+- `multiple.cpp` guarda los tiempos en: `timeStats.txt`.
+- `matrixtest.cpp` guarda los tiempos en: `matrixTimeStats.txt`.
+
+---
+
+### Opcional: Salida de Datos Calculados
+Cada script se puede configurar para activar la escritura de los arreglos o matrices calculadas en un archivo de salida.
