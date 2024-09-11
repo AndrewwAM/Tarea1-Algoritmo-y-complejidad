@@ -18,4 +18,4 @@ full.cpp ----------> fullTimeStats.txt
 multiple.cpp ------> timeStats.txt
 matrixtest.cpp ----> matrixTimeStats.txt
 
-Se puede configurar cada script para activar la escritura en un archivo de salida de los arreglos o matrices calculados.
+Se puede configurar cada script para activar la escritura en un archivo de salida de los arreglos o matrices calculadas.
